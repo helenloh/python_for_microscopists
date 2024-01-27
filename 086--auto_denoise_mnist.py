@@ -93,8 +93,14 @@ model.evaluate(x_test_noisy, x_test)
 
 model.save('denoising_autoencoder.model')
 
+# The model will apply its learned denoising process to these images. 
+# The output, no_noise_img, is the model's best attempt at reconstructing the clean, 
+# noise-free images from the noisy inputs.
 no_noise_img = model.predict(x_test_noisy)
 
+# plt.figure(figsize=(40, 4)):
+# This line creates a new matplotlib figure with a specified size. 
+# figsize=(40, 4) sets the width to 40 inches and the height to 4 inches.
 plt.figure(figsize=(40, 4))
 for i in range(10):
     # display original

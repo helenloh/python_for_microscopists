@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 __author__ = "Sreenivas Bhattiprolu"
 __license__ = "Feel free to copy, I appreciate if you acknowledge Python for Microscopists"
-#chatgpt answer : https://chat.openai.com/share/9a538b09-28f1-47be-b88d-bc994fdac8d4
+
 # Objective :To create a denoise autoencoder. 
 # Purpose: The autoencoder learn to separate noise from signal
 
@@ -53,6 +53,9 @@ noise_factor = 0.5
 x_train_noisy = x_train + noise_factor * np.random.normal(loc=0.0, scale=1.0, size=x_train.shape)
 x_test_noisy = x_test + noise_factor * np.random.normal(loc=0.0, scale=1.0, size=x_test.shape)
 
+# The np.clip function is used here to ensure 
+# that the values of the noisy images remain
+# within a specific range, in this case, between 0 and 1. 
 x_train_noisy = np.clip(x_train_noisy, 0., 1.)
 x_test_noisy = np.clip(x_test_noisy, 0., 1.)
 
@@ -92,15 +95,14 @@ model.fit(x_train_noisy, x_train, epochs=10, batch_size=256, shuffle=True,
 model.evaluate(x_test_noisy, x_test)
 
 model.save('denoising_autoencoder.model')
-
-# The model will apply its learned denoising process to these images. 
-# The output, no_noise_img, is the model's best attempt at reconstructing the clean, 
-# noise-free images from the noisy inputs.
+# The model will apply its 
+# learned denoising process to these images. 
 no_noise_img = model.predict(x_test_noisy)
 
-# plt.figure(figsize=(40, 4)):
-# This line creates a new matplotlib figure with a specified size. 
-# figsize=(40, 4) sets the width to 40 inches and the height to 4 inches.
+
+# This line creates a new matplotlib figure
+# with a specified size. figsize=(40, 4) sets
+# the width to 40 inches and the height to 4 inches.
 plt.figure(figsize=(40, 4))
 for i in range(10):
     # display original

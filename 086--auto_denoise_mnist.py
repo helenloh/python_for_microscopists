@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 __author__ = "Sreenivas Bhattiprolu"
 __license__ = "Feel free to copy, I appreciate if you acknowledge Python for Microscopists"
-#chatgpt answer : https://chat.openai.com/share/795e6111-dd44-4f2f-913a-f84e0fc12897
+#chatgpt answer : https://chat.openai.com/share/9a538b09-28f1-47be-b88d-bc994fdac8d4
 # Objective :To create a denoise autoencoder. 
 # Purpose: The autoencoder learn to separate noise from signal
 

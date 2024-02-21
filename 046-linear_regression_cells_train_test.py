@@ -20,9 +20,10 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('other_files/cells.csv')
 print(df)
 
-#plt.xlabel('time')
-#plt.ylabel('cells')
-#plt.scatter(df.time, df.cells,color='red',marker='+')
+plt.xlabel('time')
+plt.ylabel('cells')
+plt.scatter(df.time, df.cells,color='red',marker='+')
+plt.show()
 
 #For linear regression, Y=the value we want to predict
 #X= all independent variables upon which Y depends. 
@@ -61,7 +62,7 @@ X_train, X_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.4, r
 reg = linear_model.LinearRegression()  #Create an instance of the model.
 reg.fit(X_train,y_train)   #Train the model or fits a linear model
 
-print(reg.score(X_train, y_train))  #Prints the R^2 value, a measure of how well
+print('R2',reg.score(X_train, y_train))  #Prints the R^2 value, a measure of how well
 #observed values are replicated by themodel. 
 
 

@@ -35,7 +35,7 @@ sns.lmplot(x='Time', y='Images_Analyzed', data=df, hue='Age')  #Scatterplot with
 sns.lmplot(x='Coffee', y='Images_Analyzed', data=df, hue='Age', order=2)
 #Looks like too much coffee is not good... negative effects
 
-#sns.lmplot(x='Age', y='Images_Analyzed', data=df, hue='Age')
+sns.lmplot(x='Age', y='Images_Analyzed', data=df, hue='Age')
 
 import numpy as np
 from sklearn import linear_model

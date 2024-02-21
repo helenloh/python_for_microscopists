@@ -13,9 +13,9 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('other_files/cells.csv')
 print(df)
 
-#plt.xlabel('time')
-#plt.ylabel('cells')
-#plt.scatter(df.time, df.cells,color='red',marker='+')
+plt.xlabel('time')
+plt.ylabel('cells')
+plt.scatter(df.time, df.cells,color='red',marker='+')
 
 #For linear regression, Y=the value we want to predict
 #X= all independent variables upon which Y depends. 
@@ -97,8 +97,3 @@ print(slope, intercept)
 
 #Compare the slope and intercept reported with m and b values from above.
 #Should be the same.
-
-
-
-
-
